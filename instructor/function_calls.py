@@ -4,6 +4,7 @@ import logging
 from functools import wraps
 # from typing import Annotated, Any, Optional, TypeVar, cast
 from typing_extensions import Annotated, Any, Optional, TypeVar, cast
+from typing_extensions import Dict, List, Any
 from docstring_parser import parse
 from openai.types.chat import ChatCompletion
 from pydantic import (
@@ -33,7 +34,7 @@ class OpenAISchema(BaseModel):
     model_config = ConfigDict(ignored_types=(classproperty,))
 
     @classproperty
-    def openai_schema(cls) -> dict[str, Any]:
+    def openai_schema(cls) -> Dict[str, Any]:
         """
         Return the schema in the format of OpenAI's schema as jsonschema
 
