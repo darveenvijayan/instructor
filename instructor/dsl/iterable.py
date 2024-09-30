@@ -1,4 +1,3 @@
-from __future__ import annotations
 # from typing import Any, Optional, cast, ClassVar
 from typing_extensions import Annotated, Any, Optional, TypeVar, cast, ClassVar
 from typing_extensions import Dict as dict
