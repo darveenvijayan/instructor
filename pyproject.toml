@@ -9,6 +9,7 @@ packages = [{ include = "instructor" }]
 repository = "https://github.com/jxnl/instructor"
 
 [tool.poetry.dependencies]
+python = "^3.8"
 openai = "^1.45.0"
 pydantic = "^2.8.0"
 docstring-parser = "^0.16"
@@ -121,7 +122,7 @@ exclude = [
     "src/typestubs",
     "**/tests/**",
 ]
-pythonVersion = "3.9"
+pythonVersion = "3.8"
 typeCheckingMode = "strict"
 # Allow "redundant" runtime type-checking.
 reportUnnecessaryIsInstance = "none"
