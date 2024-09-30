@@ -76,7 +76,7 @@ class OpenAISchema(BaseModel):
         }
 
     @classproperty
-    def anthropic_schema(cls) -> dict[str, Any]:
+    def anthropic_schema(cls) -> Dict[str, Any]:
         return {
             "name": cls.openai_schema["name"],
             "description": cls.openai_schema["description"],
@@ -98,7 +98,7 @@ class OpenAISchema(BaseModel):
     def from_response(
         cls,
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
         mode: Mode = Mode.TOOLS,
     ) -> BaseModel:
