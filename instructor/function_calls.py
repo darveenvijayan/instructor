@@ -185,7 +185,7 @@ class OpenAISchema(BaseModel):
         ]  # TODO update with anthropic specific types
 
         tool_calls_validator = TypeAdapter(
-            Annotated[list[Any], Field(min_length=1, max_length=1)]
+            Annotated[List[Any], Field(min_length=1, max_length=1)]
         )
         tool_call = tool_calls_validator.validate_python(tool_calls)[0]
 
