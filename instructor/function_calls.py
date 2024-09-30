@@ -4,7 +4,7 @@ import logging
 from functools import wraps
 # from typing import Annotated, Any, Optional, TypeVar, cast
 from typing_extensions import Annotated, Any, Optional, TypeVar, cast
-from typing_extensions import Dict, List, Any
+from typing_extensions import Dict, List, Any, Type
 from docstring_parser import parse
 from openai.types.chat import ChatCompletion
 from pydantic import (
