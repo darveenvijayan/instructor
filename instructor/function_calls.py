@@ -155,7 +155,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_cohere_json_schema(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: ChatCompletion,
         validation_context: Optional[dict[str, Any]] = None,
         strict: Optional[bool] = None,
@@ -169,7 +169,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_anthropic_tools(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: ChatCompletion,
         validation_context: Optional[dict[str, Any]] = None,
         strict: Optional[bool] = None,
@@ -195,7 +195,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_anthropic_json(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: ChatCompletion,
         validation_context: Optional[dict[str, Any]] = None,
         strict: Optional[bool] = None,
@@ -227,7 +227,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_gemini_json(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: Any,
         validation_context: Optional[dict[str, Any]] = None,
         strict: Optional[bool] = None,
@@ -256,7 +256,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_vertexai_tools(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: ChatCompletion,
         validation_context: Optional[dict[str, Any]] = None,
     ) -> BaseModel:
@@ -269,7 +269,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_vertexai_json(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: ChatCompletion,
         validation_context: Optional[dict[str, Any]] = None,
         strict: Optional[bool] = None,
@@ -280,7 +280,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_cohere_tools(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: ChatCompletion,
         validation_context: Optional[dict[str, Any]] = None,
         strict: Optional[bool] = None,
@@ -293,7 +293,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_functions(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: ChatCompletion,
         validation_context: Optional[dict[str, Any]] = None,
         strict: Optional[bool] = None,
@@ -310,7 +310,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_tools(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: ChatCompletion,
         validation_context: Optional[dict[str, Any]] = None,
         strict: Optional[bool] = None,
@@ -337,7 +337,7 @@ class OpenAISchema(BaseModel):
 
     @classmethod
     def parse_json(
-        cls: type[BaseModel],
+        cls: Type[BaseModel],
         completion: ChatCompletion,
         validation_context: Optional[dict[str, Any]] = None,
         strict: Optional[bool] = None,
@@ -352,7 +352,7 @@ class OpenAISchema(BaseModel):
         )
 
 
-def openai_schema(cls: type[BaseModel]) -> OpenAISchema:
+def openai_schema(cls: Type[BaseModel]) -> OpenAISchema:
     if not issubclass(cls, BaseModel):
         raise TypeError("Class must be a subclass of pydantic.BaseModel")
 
