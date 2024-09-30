@@ -1,5 +1,5 @@
 # from typing import Any, Optional, cast, ClassVar
-from typing_extensions import Annotated, Any, Optional, TypeVar, cast
+from typing_extensions import Annotated, Any, Optional, TypeVar, cast ClassVar
 from typing_extensions import Dict as dict
 from typing_extensions import Type as type
 from typing_extensions import List as list
