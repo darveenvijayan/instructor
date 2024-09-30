@@ -1,4 +1,3 @@
-from __future__ import annotations
 from .iterable import IterableModel
 from .maybe import Maybe
 from .partial import Partial
