@@ -157,7 +157,7 @@ class OpenAISchema(BaseModel):
     def parse_cohere_json_schema(
         cls: Type[BaseModel],
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
     ):
         assert hasattr(
@@ -171,7 +171,7 @@ class OpenAISchema(BaseModel):
     def parse_anthropic_tools(
         cls: Type[BaseModel],
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
     ) -> BaseModel:
         from anthropic.types import Message
@@ -197,7 +197,7 @@ class OpenAISchema(BaseModel):
     def parse_anthropic_json(
         cls: Type[BaseModel],
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
     ) -> BaseModel:
         from anthropic.types import Message
@@ -229,7 +229,7 @@ class OpenAISchema(BaseModel):
     def parse_gemini_json(
         cls: Type[BaseModel],
         completion: Any,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
     ) -> BaseModel:
         try:
@@ -258,7 +258,7 @@ class OpenAISchema(BaseModel):
     def parse_vertexai_tools(
         cls: Type[BaseModel],
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
     ) -> BaseModel:
         tool_call = completion.candidates[0].content.parts[0].function_call.args  # type: ignore
         model = {}
@@ -271,7 +271,7 @@ class OpenAISchema(BaseModel):
     def parse_vertexai_json(
         cls: Type[BaseModel],
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
     ) -> BaseModel:
         return cls.model_validate_json(
@@ -282,7 +282,7 @@ class OpenAISchema(BaseModel):
     def parse_cohere_tools(
         cls: Type[BaseModel],
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
     ) -> BaseModel:
         text = cast(str, completion.text)  # type: ignore - TODO update with cohere specific types
@@ -295,7 +295,7 @@ class OpenAISchema(BaseModel):
     def parse_functions(
         cls: Type[BaseModel],
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
     ) -> BaseModel:
         message = completion.choices[0].message
@@ -312,7 +312,7 @@ class OpenAISchema(BaseModel):
     def parse_tools(
         cls: Type[BaseModel],
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
     ) -> BaseModel:
         message = completion.choices[0].message
@@ -339,7 +339,7 @@ class OpenAISchema(BaseModel):
     def parse_json(
         cls: Type[BaseModel],
         completion: ChatCompletion,
-        validation_context: Optional[dict[str, Any]] = None,
+        validation_context: Optional[Dict[str, Any]] = None,
         strict: Optional[bool] = None,
     ) -> BaseModel:
         message = completion.choices[0].message.content or ""
