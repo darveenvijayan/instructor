@@ -3,7 +3,7 @@ from typing_extensions import Annotated, Any, Optional, TypeVar, cast, ClassVar
 from typing_extensions import Dict as dict
 from typing_extensions import Type as type
 from typing_extensions import List as list
-from __future__ import annotations
+
 from collections.abc import AsyncGenerator, Generator, Iterable
 
 from pydantic import BaseModel, Field, create_model
